@@ -51,11 +51,7 @@ const User = () => {
   return (
     <Container>
       <h2>All Users</h2>
-      <TableContainer
-        component={Paper}
-        sx={{ width: "50%" }}
-        style={{ margin: "0 auto" }}
-      >
+      <TableContainer component={Paper} sx={{ width: "50%" }}>
         <Table sx={{ width: "100%" }} aria-label="customized table">
           <TableHead>
             <TableRow>

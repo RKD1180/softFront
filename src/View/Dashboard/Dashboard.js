@@ -12,17 +12,25 @@ import ListItem from "@mui/material/ListItem";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import PersonIcon from "@mui/icons-material/Person";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 const drawerWidth = 240;
 
 const Dashboard = (props) => {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const navigate = useNavigate();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
+  };
+
+  const handleLogout = () => {
+    console.log("click");
+    localStorage.clear();
+    navigate("/");
   };
 
   const drawer = (
@@ -70,12 +78,29 @@ const Dashboard = (props) => {
             style={{
               display: "flex",
               justifyContent: "left",
+              fontSize: 17,
+              fontWeight: 600,
             }}
           >
             <PersonIcon sx={{ mr: 1 }} />
             <span>Products</span>
           </ListItem>
         </Link>
+
+        <ListItem
+          button
+          onClick={handleLogout}
+          style={{
+            display: "flex",
+            justifyContent: "left",
+            fontSize: 17,
+            fontWeight: 600,
+            marginTop: 6,
+          }}
+        >
+          <LogoutIcon sx={{ mr: 1 }} />
+          <span>Log Out</span>
+        </ListItem>
       </List>
     </div>
   );

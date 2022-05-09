@@ -5,6 +5,7 @@ import Dashboard from "./View/Dashboard/Dashboard";
 import Products from "./View/Dashboard/Products/Products";
 import User from "./View/Dashboard/User/User";
 import Login from "./View/Login/Login";
+import NotFound from "./View/NotFound/NotFound";
 import Registration from "./View/Registration/Registration";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Route path="/dashboard" element={<User />} />
             <Route path="/dashboard/products" element={<Products />} />
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </Authprovider>
