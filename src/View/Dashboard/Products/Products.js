@@ -115,7 +115,7 @@ const Products = () => {
               <StyledTableCell>Price</StyledTableCell>
               <StyledTableCell>Weight</StyledTableCell>
               <StyledTableCell>Color</StyledTableCell>
-              <StyledTableCell>Auction</StyledTableCell>
+              <StyledTableCell>Action</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
